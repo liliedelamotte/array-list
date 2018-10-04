@@ -1,10 +1,16 @@
 // ldelamotte17@georgefox.edu
 
+/**
+ * This class represents an ArrayList, which is an array with greater
+ * functionality.
+ *
+ * @param <E>, the type of which to create an ArrayList of.
+ */
 public class ArrayList<E> {
 
     private Object[] _arrayList;
     private static final int DEFAULT_CAPACITY = 10;
-    private static final Object[] EMPTY_ARRAYLIST = {};
+    // private static final Object[] EMPTY_ARRAYLIST = {};
     private int _size;
     private boolean _isEmpty;
     private E _oldValue;
@@ -16,10 +22,10 @@ public class ArrayList<E> {
      */
     public ArrayList() {
 
-        // _size = DEFAULT_CAPACITY;
-        super();
-        // _arrayList = new Object[_size];
-        this._arrayList = EMPTY_ARRAYLIST;
+        _size = DEFAULT_CAPACITY;
+        // super();
+        _arrayList = new Object[_size];
+        // this._arrayList = EMPTY_ARRAYLIST;
 
     }
 
@@ -53,9 +59,9 @@ public class ArrayList<E> {
 
         checkRange(index - 1);
 
+        _size++;
         System.arraycopy(_arrayList, index, _arrayList, index + 1,
                 _size - index);
-        _size++;
 
     }
 
@@ -64,12 +70,12 @@ public class ArrayList<E> {
      * Adds an element to the end of an ArrayList.
      *
      * @param element, the Object to be added.
-     * @return WHAT IS THIS SUPPOSED TO RETURN? --------------------------------------------
+     * @return true WHAT IS THIS SUPPOSED TO RETURN? --------------------------------------------
      */
     public boolean add(E element) {
 
-        _arrayList[_size++] = element;
         _size++;
+        _arrayList[_size++] = element;
         return true;
 
     }
@@ -77,6 +83,7 @@ public class ArrayList<E> {
 
     /**
      * Replaces all elements in an ArrayList with null. Size does not change.
+     * DOES THE SIZE NEED TO CHANGE HERE? -------------------------------------------------------
      */
     public void clear() {
 
@@ -98,13 +105,13 @@ public class ArrayList<E> {
     public E get(int index) throws IndexOutOfBoundsException {
 
         checkRange(index);
-
         return ((E) _arrayList[index]);
 
     }
 
 
     /**
+     * SHOULD THIS METHOD THROW AN ERROR? WHAT IF SOMEONE SENDS IN A NONEXISTENT ELEMENT? ---------------
      * Takes in an element and retrieves the index of the first occurrence of
      * that element in an ArrayList.
      *
@@ -115,7 +122,7 @@ public class ArrayList<E> {
     public int indexOf(E element) {
 
         _indexOf = -1;
-        
+
         if (element == null) {
             for (int i = 0; i < _size; i++) {
                 if (_arrayList[i] == null) {
@@ -190,6 +197,7 @@ public class ArrayList<E> {
 
         _oldValue = (get(index));
         _arrayList[index] = element;
+
         return _oldValue;
 
     }
@@ -214,10 +222,12 @@ public class ArrayList<E> {
      * @throws IndexOutOfBoundsException
      */
     private void checkRange(int index) throws IndexOutOfBoundsException {
+
         if (index >= _size || index < 0) {
             throw new IndexOutOfBoundsException();
+
         }
 
-        
+
     }
 }

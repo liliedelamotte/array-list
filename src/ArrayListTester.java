@@ -1,10 +1,7 @@
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertThat;
 
-import java.util.Arrays;
-
 import org.junit.*;
-import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.CoreMatchers.*;
 import org.junit.Test;
 
@@ -63,7 +60,8 @@ public class ArrayListTester {
     @Test
     public void test_add_validIndex() {
 
-        assertThat(_firstArrayList.add(2, "Grape"));
+        _firstArrayList.add(2, "Grape");
+        assertTrue(_firstArrayList.indexOf("Grape") == 2);
 
     }
 
@@ -86,7 +84,8 @@ public class ArrayListTester {
     @Test
     public void test_add_noIndex() {
 
-        assertThat(_firstArrayList.add("Blackberry"));
+        _firstArrayList.add("Blackberry");
+        assertTrue(_firstArrayList.indexOf("Blackberry") == 3);
 
     }
 
@@ -140,7 +139,7 @@ public class ArrayListTester {
     @Test
     public void test_indexOf_invalidElement() {
 
-        assertThat(_firstArrayList.indexOf("Cherry"));
+        assertTrue(_firstArrayList.indexOf("Cherry") == -1);
 
     }
 

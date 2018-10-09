@@ -316,9 +316,12 @@ public class ArrayList<E> implements Iterable<E>{
     }
 
 
+    /**
+     * Returns an iterator over elements of type E.
+     */
     @Override
     public Iterator<E> iterator() {
-        // TODO Auto-generated method stub
+        // TODO Auto-generated method stub ------------------------------------------
         return null;
     }
 
@@ -331,20 +334,25 @@ public class ArrayList<E> implements Iterable<E>{
     public class ArrayListIterator<E> implements Iterator<E> {
 
         /**
+         * Tests whether or not there are elements remaining in the collection.
          *
+         * @return true if there is at least one more element in the collection
          */
         @Override
         public boolean hasNext() {
-            // TODO Auto-generated method stub
+            // TODO Auto-generated method stub ------------------------------------------
             return false;
         }
 
+
         /**
+         * Obtain the next element in the collection.
          *
+         * @return the next element in the collection
          */
         @Override
         public E next() {
-            // TODO Auto-generated method stub
+            // TODO Auto-generated method stub ------------------------------------------
             return null;
         }
 

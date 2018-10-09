@@ -1,3 +1,5 @@
+import java.util.Iterator;
+
 // ldelamotte17@georgefox.edu
 // Program 4
 // 2018-10-06
@@ -8,7 +10,7 @@
  *
  * @param <E>, the type of which an ArrayList is created.
  */
-public class ArrayList<E> {
+public class ArrayList<E> implements Iterable<E>{
 
     private Object[] _arrayList;
     private int _elementsInUse;
@@ -311,6 +313,41 @@ public class ArrayList<E> {
         // places new element at desired index
         _arrayList[index] = element;
         _elementsInUse++;
+    }
+
+
+    @Override
+    public Iterator<E> iterator() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    /**
+     *
+     *
+     * @param <E>
+     */
+    public class ArrayListIterator<E> implements Iterator<E> {
+
+        /**
+         *
+         */
+        @Override
+        public boolean hasNext() {
+            // TODO Auto-generated method stub
+            return false;
+        }
+
+        /**
+         *
+         */
+        @Override
+        public E next() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
     }
 
 }
